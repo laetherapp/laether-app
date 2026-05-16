@@ -41,6 +41,8 @@ body {
   background-position: center;
   background-attachment: fixed;
   z-index: -2;
+  filter: blur(4px) brightness(1.05);
+  transform: scale(1.05);
 }
 
 /* Overlay légèrement plus opaque pour lisibilité */

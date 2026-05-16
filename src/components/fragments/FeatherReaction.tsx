@@ -55,37 +55,37 @@ const RealisticFeather = ({ glowing }: { glowing: boolean }) => (
     <path
       d="M24 6 Q22 28 21 50 Q20.5 60 20 74"
       stroke="url(#rachis)"
-      strokeWidth={glowing ? '1.1' : '0.75'}
+      strokeWidth={glowing ? '1.4' : '1.0'}
       fill="none"
       strokeLinecap="round"
       filter={glowing ? 'url(#softglow)' : undefined}
     />
 
     {/* Barbes gauches — fines, longues, courbes naturelles */}
-    <path d="M23.5 10 Q17 13 11 17" stroke="url(#quill)" strokeWidth="0.55" strokeLinecap="round" opacity={glowing ? '0.85' : '0.5'}/>
-    <path d="M23 13 Q15 17 9 22" stroke="url(#quill)" strokeWidth="0.55" strokeLinecap="round" opacity={glowing ? '0.82' : '0.48'}/>
-    <path d="M22.5 17 Q14 22 8 28" stroke="url(#quill)" strokeWidth="0.52" strokeLinecap="round" opacity={glowing ? '0.78' : '0.44'}/>
-    <path d="M22 21 Q13 27 7 33" stroke="url(#quill)" strokeWidth="0.5" strokeLinecap="round" opacity={glowing ? '0.74' : '0.42'}/>
-    <path d="M22 25 Q13 31 7 38" stroke="url(#quill)" strokeWidth="0.48" strokeLinecap="round" opacity={glowing ? '0.7' : '0.38'}/>
-    <path d="M21.5 29 Q13 36 8 43" stroke="url(#quill)" strokeWidth="0.45" strokeLinecap="round" opacity={glowing ? '0.65' : '0.35'}/>
-    <path d="M21 33 Q14 39 9 46" stroke="url(#quill)" strokeWidth="0.42" strokeLinecap="round" opacity={glowing ? '0.58' : '0.3'}/>
-    <path d="M21 37 Q14 43 10 49" stroke="url(#quill)" strokeWidth="0.4" strokeLinecap="round" opacity={glowing ? '0.5' : '0.25'}/>
-    <path d="M20.5 41 Q15 46 12 52" stroke="url(#quill)" strokeWidth="0.36" strokeLinecap="round" opacity={glowing ? '0.42' : '0.2'}/>
-    <path d="M20.5 45 Q16 49 13 55" stroke="url(#quill)" strokeWidth="0.32" strokeLinecap="round" opacity={glowing ? '0.33' : '0.16'}/>
-    <path d="M20 49 Q16.5 52 14 57" stroke="url(#quill)" strokeWidth="0.28" strokeLinecap="round" opacity={glowing ? '0.24' : '0.12'}/>
+    <path d="M23.5 10 Q17 13 11 17" stroke="url(#quill)" strokeWidth="0.55" strokeLinecap="round" opacity={glowing ? '0.85' : '0.75'}/>
+    <path d="M23 13 Q15 17 9 22" stroke="url(#quill)" strokeWidth="0.55" strokeLinecap="round" opacity={glowing ? '0.82' : '0.73'}/>
+    <path d="M22.5 17 Q14 22 8 28" stroke="url(#quill)" strokeWidth="0.52" strokeLinecap="round" opacity={glowing ? '0.78' : '0.69'}/>
+    <path d="M22 21 Q13 27 7 33" stroke="url(#quill)" strokeWidth="0.5" strokeLinecap="round" opacity={glowing ? '0.74' : '0.67'}/>
+    <path d="M22 25 Q13 31 7 38" stroke="url(#quill)" strokeWidth="0.48" strokeLinecap="round" opacity={glowing ? '0.7' : '0.63'}/>
+    <path d="M21.5 29 Q13 36 8 43" stroke="url(#quill)" strokeWidth="0.45" strokeLinecap="round" opacity={glowing ? '0.65' : '0.60'}/>
+    <path d="M21 33 Q14 39 9 46" stroke="url(#quill)" strokeWidth="0.42" strokeLinecap="round" opacity={glowing ? '0.58' : '0.55'}/>
+    <path d="M21 37 Q14 43 10 49" stroke="url(#quill)" strokeWidth="0.4" strokeLinecap="round" opacity={glowing ? '0.5' : '0.50'}/>
+    <path d="M20.5 41 Q15 46 12 52" stroke="url(#quill)" strokeWidth="0.36" strokeLinecap="round" opacity={glowing ? '0.42' : '0.45'}/>
+    <path d="M20.5 45 Q16 49 13 55" stroke="url(#quill)" strokeWidth="0.32" strokeLinecap="round" opacity={glowing ? '0.33' : '0.41'}/>
+    <path d="M20 49 Q16.5 52 14 57" stroke="url(#quill)" strokeWidth="0.28" strokeLinecap="round" opacity={glowing ? '0.24' : '0.37'}/>
 
     {/* Barbes droites */}
-    <path d="M23.5 10 Q30 13 36 18" stroke="url(#quill)" strokeWidth="0.55" strokeLinecap="round" opacity={glowing ? '0.85' : '0.5'}/>
-    <path d="M23 13 Q31 17 37 23" stroke="url(#quill)" strokeWidth="0.55" strokeLinecap="round" opacity={glowing ? '0.82' : '0.48'}/>
-    <path d="M22.5 17 Q31 22 36 28" stroke="url(#quill)" strokeWidth="0.52" strokeLinecap="round" opacity={glowing ? '0.78' : '0.44'}/>
-    <path d="M22 21 Q31 27 35 33" stroke="url(#quill)" strokeWidth="0.5" strokeLinecap="round" opacity={glowing ? '0.74' : '0.42'}/>
-    <path d="M22 25 Q31 31 35 38" stroke="url(#quill)" strokeWidth="0.48" strokeLinecap="round" opacity={glowing ? '0.7' : '0.38'}/>
-    <path d="M21.5 29 Q30 35 34 42" stroke="url(#quill)" strokeWidth="0.45" strokeLinecap="round" opacity={glowing ? '0.65' : '0.35'}/>
-    <path d="M21 33 Q29 39 33 46" stroke="url(#quill)" strokeWidth="0.42" strokeLinecap="round" opacity={glowing ? '0.58' : '0.3'}/>
-    <path d="M21 37 Q28 42 31 49" stroke="url(#quill)" strokeWidth="0.4" strokeLinecap="round" opacity={glowing ? '0.5' : '0.25'}/>
-    <path d="M20.5 41 Q27 46 29 52" stroke="url(#quill)" strokeWidth="0.36" strokeLinecap="round" opacity={glowing ? '0.42' : '0.2'}/>
-    <path d="M20.5 45 Q26 49 28 55" stroke="url(#quill)" strokeWidth="0.32" strokeLinecap="round" opacity={glowing ? '0.33' : '0.16'}/>
-    <path d="M20 49 Q25 52 26 57" stroke="url(#quill)" strokeWidth="0.28" strokeLinecap="round" opacity={glowing ? '0.24' : '0.12'}/>
+    <path d="M23.5 10 Q30 13 36 18" stroke="url(#quill)" strokeWidth="0.55" strokeLinecap="round" opacity={glowing ? '0.85' : '0.75'}/>
+    <path d="M23 13 Q31 17 37 23" stroke="url(#quill)" strokeWidth="0.55" strokeLinecap="round" opacity={glowing ? '0.82' : '0.73'}/>
+    <path d="M22.5 17 Q31 22 36 28" stroke="url(#quill)" strokeWidth="0.52" strokeLinecap="round" opacity={glowing ? '0.78' : '0.69'}/>
+    <path d="M22 21 Q31 27 35 33" stroke="url(#quill)" strokeWidth="0.5" strokeLinecap="round" opacity={glowing ? '0.74' : '0.67'}/>
+    <path d="M22 25 Q31 31 35 38" stroke="url(#quill)" strokeWidth="0.48" strokeLinecap="round" opacity={glowing ? '0.7' : '0.63'}/>
+    <path d="M21.5 29 Q30 35 34 42" stroke="url(#quill)" strokeWidth="0.45" strokeLinecap="round" opacity={glowing ? '0.65' : '0.60'}/>
+    <path d="M21 33 Q29 39 33 46" stroke="url(#quill)" strokeWidth="0.42" strokeLinecap="round" opacity={glowing ? '0.58' : '0.55'}/>
+    <path d="M21 37 Q28 42 31 49" stroke="url(#quill)" strokeWidth="0.4" strokeLinecap="round" opacity={glowing ? '0.5' : '0.50'}/>
+    <path d="M20.5 41 Q27 46 29 52" stroke="url(#quill)" strokeWidth="0.36" strokeLinecap="round" opacity={glowing ? '0.42' : '0.45'}/>
+    <path d="M20.5 45 Q26 49 28 55" stroke="url(#quill)" strokeWidth="0.32" strokeLinecap="round" opacity={glowing ? '0.33' : '0.41'}/>
+    <path d="M20 49 Q25 52 26 57" stroke="url(#quill)" strokeWidth="0.28" strokeLinecap="round" opacity={glowing ? '0.24' : '0.37'}/>
   </svg>
 );
 
@@ -177,7 +177,7 @@ export function FeatherReaction({ fragmentId, locale, label, reactedLabel, initi
             height: '72px',
             filter: reacted
               ? 'drop-shadow(0 0 8px rgba(237,217,138,0.6)) drop-shadow(0 0 18px rgba(212,184,106,0.25))'
-              : 'drop-shadow(0 1px 3px rgba(184,148,74,0.15))',
+              : 'drop-shadow(0 2px 8px rgba(140,106,44,0.35)) drop-shadow(0 1px 3px rgba(140,106,44,0.2))',
             transition: 'filter 1.5s ease',
           }}
           aria-label={label}

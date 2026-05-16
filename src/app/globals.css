@@ -9,38 +9,28 @@
   --font-inter: 'Inter', system-ui, sans-serif;
   --gold: #B8944A;
   --gold-light: #D4B86A;
-  --gold-pale: rgba(184,148,74,0.15);
-  --ink: #2A2820;
-  --ink-soft: rgba(42,40,32,0.75);
-  --ink-muted: rgba(42,40,32,0.45);
+  --ink-deep: rgba(40,30,15,0.88);
+  --ink-med: rgba(50,38,18,0.72);
+  --ink-soft: rgba(50,38,18,0.5);
   --white-glass: rgba(255,255,255,0.18);
-  --white-glass-2: rgba(255,255,255,0.28);
-  --border-glass: rgba(255,255,255,0.25);
-  --border-gold: rgba(184,148,74,0.3);
+  --border-glass: rgba(255,255,255,0.22);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
 
 body {
   font-family: var(--font-inter);
   font-weight: 300;
-  color: var(--ink);
+  color: var(--ink-deep);
   line-height: 1.75;
   min-height: 100vh;
   background: #FAF8F2;
 }
 
 /* ── Background immersif ── */
-.bg-immersive {
-  position: relative;
-  min-height: 100vh;
-}
+.bg-immersive { position: relative; min-height: 100vh; }
 
 .bg-immersive::before {
   content: '';
@@ -53,54 +43,59 @@ body {
   z-index: -2;
 }
 
+/* Overlay légèrement plus opaque pour lisibilité */
 .bg-immersive::after {
   content: '';
   position: fixed;
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(250,248,242,0.55) 0%,
-    rgba(250,248,242,0.35) 40%,
-    rgba(250,248,242,0.55) 100%
+    rgba(250,245,235,0.52) 0%,
+    rgba(250,245,235,0.28) 40%,
+    rgba(250,245,235,0.52) 100%
   );
   z-index: -1;
 }
 
-/* ── Glassmorphism cards ── */
+/* ── Glassmorphism ── */
 .glass {
-  background: var(--white-glass);
+  background: rgba(255,255,255,0.18);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-glass);
-  box-shadow: 0 4px 32px rgba(0,0,0,0.06), 0 1px 4px rgba(0,0,0,0.04);
+  border: 1px solid rgba(255,255,255,0.25);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.04);
 }
 
 .glass-strong {
-  background: rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.38);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
-  border: 1px solid rgba(255,255,255,0.4);
-  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255,255,255,0.35);
+  box-shadow: 0 4px 32px rgba(0,0,0,0.06);
 }
 
 .glass-gold {
-  background: rgba(255,248,230,0.35);
+  background: rgba(255,248,225,0.28);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(184,148,74,0.25);
+  border: 1px solid rgba(184,148,74,0.22);
 }
 
 /* ── Divider ── */
 .divider {
   width: 40px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  background: linear-gradient(90deg, transparent, rgba(184,148,74,0.7), transparent);
   margin: 0 auto;
-  opacity: 0.7;
 }
 
 /* ── Typography ── */
 .font-display { font-family: var(--font-playfair); }
+
+/* ── Card text — textes lisibles sur fond clair ── */
+.card-text-primary { color: rgba(40,30,15,0.88); }
+.card-text-secondary { color: rgba(50,38,18,0.65); }
+.card-text-muted { color: rgba(50,38,18,0.45); }
 
 /* ── Scrollbar ── */
 ::-webkit-scrollbar { width: 3px; }
@@ -108,12 +103,11 @@ body {
 ::-webkit-scrollbar-thumb { background: rgba(184,148,74,0.3); border-radius: 2px; }
 
 /* ── Selection ── */
-::selection { background: rgba(184,148,74,0.25); }
+::selection { background: rgba(184,148,74,0.2); }
 
 /* ── Focus ── */
 :focus-visible { outline: 1px solid rgba(184,148,74,0.6); outline-offset: 2px; border-radius: 4px; }
 
-/* ── Textarea / Input ── */
 textarea, input {
   font-family: var(--font-inter);
   -webkit-tap-highlight-color: transparent;
@@ -126,24 +120,18 @@ textarea, input {
   font-size: 10px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 3px 10px;
+  padding: 4px 12px;
   border-radius: 20px;
   font-weight: 500;
+  white-space: nowrap;
 }
 
-/* ── Feather reaction animation ── */
-.feather-btn {
-  transition: all 0.4s ease;
-  cursor: pointer;
-}
-.feather-btn:hover { transform: scale(1.08); }
-.feather-btn.reacted {
-  filter: drop-shadow(0 0 8px rgba(212,184,106,0.9));
-  animation: featherFloat 3s ease-in-out infinite;
-}
+/* ── Feather floating ── */
 @keyframes featherFloat {
-  0%,100% { transform: translateY(0) scale(1.1); }
-  50% { transform: translateY(-3px) scale(1.12); }
+  0%,100% { transform: translateY(0) rotate(0deg); }
+  30% { transform: translateY(-5px) rotate(-1deg); }
+  60% { transform: translateY(-3px) rotate(0.8deg); }
+  80% { transform: translateY(-6px) rotate(-0.5deg); }
 }
 
 /* ── iOS safe area ── */

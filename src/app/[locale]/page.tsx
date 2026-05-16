@@ -23,11 +23,11 @@ export default function HomePage() {
 
       {/* Eyebrow */}
       <motion.p
-        initial={{ opacity: 0, letterSpacing: '0.3em' }}
-        animate={{ opacity: 0.6, letterSpacing: '0.2em' }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{ duration: 2, ease: 'easeOut' }}
         className="font-display italic text-sm mb-8"
-        style={{ color: 'rgba(42,40,32,0.55)' }}
+        style={{ color: 'rgba(80,60,30,0.7)', letterSpacing: '0.12em' }}
       >
         {t('eyebrow')}
       </motion.p>
@@ -40,8 +40,13 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.8, ease, delay: 0.4 + i * 0.25 }}
-            className="font-display text-[48px] sm:text-[64px] leading-[1.1] text-ink-800"
-            style={{ fontWeight: 500, textShadow: '0 2px 20px rgba(255,255,255,0.8)' }}
+            className="font-display leading-[1.1]"
+            style={{
+              fontSize: 'clamp(40px, 8vw, 68px)',
+              fontWeight: 500,
+              color: 'rgba(40,30,15,0.88)',
+              textShadow: '0 1px 12px rgba(255,255,255,0.6)',
+            }}
           >
             {line}
           </motion.h1>
@@ -64,7 +69,8 @@ export default function HomePage() {
         className="mb-10 space-y-1"
       >
         {t('subtitle').split('\n').map((line, i) => (
-          <p key={i} className="text-[15px]" style={{ color: 'rgba(42,40,32,0.65)', textShadow: '0 1px 8px rgba(255,255,255,0.6)' }}>
+          <p key={i} className="text-[15px]"
+            style={{ color: 'rgba(50,38,18,0.75)', textShadow: '0 1px 6px rgba(255,255,255,0.5)' }}>
             {line}
           </p>
         ))}
@@ -78,8 +84,15 @@ export default function HomePage() {
       >
         <Link
           href={`/${locale}/fragments`}
-          className="glass rounded-full px-10 py-4 text-[12px] uppercase tracking-[0.2em] text-ink-700 hover:text-ink-900 transition-all duration-700 hover:scale-105 inline-block"
-          style={{ fontWeight: 400 }}
+          className="rounded-full px-10 py-4 text-[12px] uppercase tracking-[0.2em] inline-block transition-all duration-700 hover:scale-105"
+          style={{
+            background: 'rgba(255,255,255,0.22)',
+            backdropFilter: 'blur(16px)',
+            WebkitBackdropFilter: 'blur(16px)',
+            border: '1px solid rgba(255,255,255,0.3)',
+            color: 'rgba(40,30,15,0.85)',
+            fontWeight: 400,
+          }}
         >
           {t('cta')}
         </Link>
@@ -88,10 +101,10 @@ export default function HomePage() {
       {/* Tagline */}
       <motion.p
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.35 }}
+        animate={{ opacity: 1 }}
         transition={{ delay: 2.5, duration: 2 }}
         className="mt-16 text-[11px] uppercase tracking-[0.25em]"
-        style={{ color: 'rgba(42,40,32,0.4)', letterSpacing: '0.22em' }}
+        style={{ color: 'rgba(50,38,18,0.55)' }}
       >
         {t('tagline')}
       </motion.p>
@@ -99,10 +112,10 @@ export default function HomePage() {
       {/* Presence */}
       <motion.p
         initial={{ opacity: 0 }}
-        animate={{ opacity: showPresence ? 0.4 : 0 }}
+        animate={{ opacity: showPresence ? 1 : 0 }}
         transition={{ duration: 2 }}
         className="mt-4 text-[12px] tracking-wide"
-        style={{ color: 'rgba(42,40,32,0.4)' }}
+        style={{ color: 'rgba(50,38,18,0.5)' }}
       >
         {t('presence')}
       </motion.p>

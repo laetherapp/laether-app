@@ -14,41 +14,78 @@ interface FeatherReactionProps {
 }
 
 const RealisticFeather = ({ glowing }: { glowing: boolean }) => (
-  <svg viewBox="0 0 60 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+  <svg viewBox="0 0 48 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
     <defs>
-      <linearGradient id="fg" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stopColor={glowing ? '#F5E8C0' : '#E8D5A0'} stopOpacity="0.9"/>
-        <stop offset="100%" stopColor={glowing ? '#D4B86A' : '#B8944A'} stopOpacity="0.7"/>
+      <linearGradient id="quill" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor={glowing ? '#FDF6E3' : '#F0E6C8'} stopOpacity={glowing ? '0.95' : '0.7'}/>
+        <stop offset="50%" stopColor={glowing ? '#EDD98A' : '#D4B86A'} stopOpacity={glowing ? '0.85' : '0.55'}/>
+        <stop offset="100%" stopColor={glowing ? '#C9A84C' : '#A8803A'} stopOpacity={glowing ? '0.75' : '0.45'}/>
+      </linearGradient>
+      <linearGradient id="rachis" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor={glowing ? '#EDD98A' : '#C8A85A'} stopOpacity={glowing ? '0.9' : '0.6'}/>
+        <stop offset="100%" stopColor={glowing ? '#C9A84C' : '#A8803A'} stopOpacity={glowing ? '0.5' : '0.3'}/>
       </linearGradient>
       {glowing && (
-        <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
-          <feGaussianBlur stdDeviation="3.5" result="blur"/>
-          <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+        <filter id="softglow" x="-50%" y="-30%" width="200%" height="160%">
+          <feGaussianBlur stdDeviation="2.5" result="blur"/>
+          <feMerge>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="blur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
         </filter>
       )}
     </defs>
-    <path d="M30 8 Q28 30 26 52 Q25 62 24 72" stroke={glowing ? '#D4B86A' : '#B8944A'} strokeWidth={glowing ? '1.4' : '1'} fill="none" filter={glowing ? 'url(#glow)' : undefined}/>
-    <path d="M30 10 Q22 14 16 18" stroke="url(#fg)" strokeWidth="0.9" opacity={glowing ? '0.9' : '0.6'}/>
-    <path d="M29 14 Q20 18 13 23" stroke="url(#fg)" strokeWidth="0.9" opacity={glowing ? '0.9' : '0.6'}/>
-    <path d="M28 18 Q19 23 12 29" stroke="url(#fg)" strokeWidth="0.9" opacity={glowing ? '0.85' : '0.55'}/>
-    <path d="M28 22 Q18 27 11 34" stroke="url(#fg)" strokeWidth="0.85" opacity={glowing ? '0.8' : '0.5'}/>
-    <path d="M27 26 Q18 32 11 39" stroke="url(#fg)" strokeWidth="0.8" opacity={glowing ? '0.75' : '0.5'}/>
-    <path d="M27 30 Q19 36 12 44" stroke="url(#fg)" strokeWidth="0.75" opacity={glowing ? '0.7' : '0.45'}/>
-    <path d="M26 34 Q20 40 14 47" stroke="url(#fg)" strokeWidth="0.7" opacity={glowing ? '0.65' : '0.4'}/>
-    <path d="M26 38 Q20 43 15 50" stroke="url(#fg)" strokeWidth="0.65" opacity={glowing ? '0.6' : '0.35'}/>
-    <path d="M25 42 Q21 46 17 52" stroke="url(#fg)" strokeWidth="0.6" opacity={glowing ? '0.5' : '0.3'}/>
-    <path d="M25 46 Q22 49 19 54" stroke="url(#fg)" strokeWidth="0.55" opacity={glowing ? '0.4' : '0.25'}/>
-    <path d="M30 10 Q37 14 43 19" stroke="url(#fg)" strokeWidth="0.9" opacity={glowing ? '0.9' : '0.6'}/>
-    <path d="M29 14 Q37 19 44 24" stroke="url(#fg)" strokeWidth="0.9" opacity={glowing ? '0.9' : '0.6'}/>
-    <path d="M28 18 Q37 23 43 29" stroke="url(#fg)" strokeWidth="0.9" opacity={glowing ? '0.85' : '0.55'}/>
-    <path d="M28 22 Q37 28 43 34" stroke="url(#fg)" strokeWidth="0.85" opacity={glowing ? '0.8' : '0.5'}/>
-    <path d="M27 26 Q36 32 42 39" stroke="url(#fg)" strokeWidth="0.8" opacity={glowing ? '0.75' : '0.5'}/>
-    <path d="M27 30 Q35 36 41 43" stroke="url(#fg)" strokeWidth="0.75" opacity={glowing ? '0.7' : '0.45'}/>
-    <path d="M26 34 Q34 40 39 47" stroke="url(#fg)" strokeWidth="0.7" opacity={glowing ? '0.65' : '0.4'}/>
-    <path d="M26 38 Q33 43 38 50" stroke="url(#fg)" strokeWidth="0.65" opacity={glowing ? '0.6' : '0.35'}/>
-    <path d="M25 42 Q32 46 36 52" stroke="url(#fg)" strokeWidth="0.6" opacity={glowing ? '0.5' : '0.3'}/>
-    <path d="M30 8 Q43 19 44 34 Q43 48 24 72 Q25 62 26 52 Q28 30 30 8Z" stroke={glowing ? '#D4B86A' : '#B8944A'} strokeWidth={glowing ? '0.8' : '0.5'} fill={glowing ? 'rgba(212,184,106,0.1)' : 'rgba(184,148,74,0.04)'} opacity={glowing ? '0.8' : '0.5'} filter={glowing ? 'url(#glow)' : undefined}/>
-    <path d="M30 8 Q18 19 12 34 Q13 48 24 72 Q25 62 26 52 Q28 30 30 8Z" stroke={glowing ? '#D4B86A' : '#B8944A'} strokeWidth={glowing ? '0.8' : '0.5'} fill={glowing ? 'rgba(212,184,106,0.1)' : 'rgba(184,148,74,0.04)'} opacity={glowing ? '0.8' : '0.5'} filter={glowing ? 'url(#glow)' : undefined}/>
+
+    {/* Contour extérieur de la plume — très doux */}
+    <path
+      d="M24 6
+         C32 14, 38 24, 37 38
+         C36 50, 30 60, 22 74
+         C20 68, 19 60, 20 50
+         C18 38, 12 28, 10 18
+         C14 12, 20 6, 24 6Z"
+      fill={glowing ? 'rgba(237,217,138,0.12)' : 'rgba(200,168,90,0.06)'}
+      stroke={glowing ? 'rgba(237,217,138,0.35)' : 'rgba(184,148,74,0.2)'}
+      strokeWidth="0.6"
+      filter={glowing ? 'url(#softglow)' : undefined}
+    />
+
+    {/* Rachis — tige centrale */}
+    <path
+      d="M24 6 Q22 28 21 50 Q20.5 60 20 74"
+      stroke="url(#rachis)"
+      strokeWidth={glowing ? '1.1' : '0.75'}
+      fill="none"
+      strokeLinecap="round"
+      filter={glowing ? 'url(#softglow)' : undefined}
+    />
+
+    {/* Barbes gauches — fines, longues, courbes naturelles */}
+    <path d="M23.5 10 Q17 13 11 17" stroke="url(#quill)" strokeWidth="0.55" strokeLinecap="round" opacity={glowing ? '0.85' : '0.5'}/>
+    <path d="M23 13 Q15 17 9 22" stroke="url(#quill)" strokeWidth="0.55" strokeLinecap="round" opacity={glowing ? '0.82' : '0.48'}/>
+    <path d="M22.5 17 Q14 22 8 28" stroke="url(#quill)" strokeWidth="0.52" strokeLinecap="round" opacity={glowing ? '0.78' : '0.44'}/>
+    <path d="M22 21 Q13 27 7 33" stroke="url(#quill)" strokeWidth="0.5" strokeLinecap="round" opacity={glowing ? '0.74' : '0.42'}/>
+    <path d="M22 25 Q13 31 7 38" stroke="url(#quill)" strokeWidth="0.48" strokeLinecap="round" opacity={glowing ? '0.7' : '0.38'}/>
+    <path d="M21.5 29 Q13 36 8 43" stroke="url(#quill)" strokeWidth="0.45" strokeLinecap="round" opacity={glowing ? '0.65' : '0.35'}/>
+    <path d="M21 33 Q14 39 9 46" stroke="url(#quill)" strokeWidth="0.42" strokeLinecap="round" opacity={glowing ? '0.58' : '0.3'}/>
+    <path d="M21 37 Q14 43 10 49" stroke="url(#quill)" strokeWidth="0.4" strokeLinecap="round" opacity={glowing ? '0.5' : '0.25'}/>
+    <path d="M20.5 41 Q15 46 12 52" stroke="url(#quill)" strokeWidth="0.36" strokeLinecap="round" opacity={glowing ? '0.42' : '0.2'}/>
+    <path d="M20.5 45 Q16 49 13 55" stroke="url(#quill)" strokeWidth="0.32" strokeLinecap="round" opacity={glowing ? '0.33' : '0.16'}/>
+    <path d="M20 49 Q16.5 52 14 57" stroke="url(#quill)" strokeWidth="0.28" strokeLinecap="round" opacity={glowing ? '0.24' : '0.12'}/>
+
+    {/* Barbes droites */}
+    <path d="M23.5 10 Q30 13 36 18" stroke="url(#quill)" strokeWidth="0.55" strokeLinecap="round" opacity={glowing ? '0.85' : '0.5'}/>
+    <path d="M23 13 Q31 17 37 23" stroke="url(#quill)" strokeWidth="0.55" strokeLinecap="round" opacity={glowing ? '0.82' : '0.48'}/>
+    <path d="M22.5 17 Q31 22 36 28" stroke="url(#quill)" strokeWidth="0.52" strokeLinecap="round" opacity={glowing ? '0.78' : '0.44'}/>
+    <path d="M22 21 Q31 27 35 33" stroke="url(#quill)" strokeWidth="0.5" strokeLinecap="round" opacity={glowing ? '0.74' : '0.42'}/>
+    <path d="M22 25 Q31 31 35 38" stroke="url(#quill)" strokeWidth="0.48" strokeLinecap="round" opacity={glowing ? '0.7' : '0.38'}/>
+    <path d="M21.5 29 Q30 35 34 42" stroke="url(#quill)" strokeWidth="0.45" strokeLinecap="round" opacity={glowing ? '0.65' : '0.35'}/>
+    <path d="M21 33 Q29 39 33 46" stroke="url(#quill)" strokeWidth="0.42" strokeLinecap="round" opacity={glowing ? '0.58' : '0.3'}/>
+    <path d="M21 37 Q28 42 31 49" stroke="url(#quill)" strokeWidth="0.4" strokeLinecap="round" opacity={glowing ? '0.5' : '0.25'}/>
+    <path d="M20.5 41 Q27 46 29 52" stroke="url(#quill)" strokeWidth="0.36" strokeLinecap="round" opacity={glowing ? '0.42' : '0.2'}/>
+    <path d="M20.5 45 Q26 49 28 55" stroke="url(#quill)" strokeWidth="0.32" strokeLinecap="round" opacity={glowing ? '0.33' : '0.16'}/>
+    <path d="M20 49 Q25 52 26 57" stroke="url(#quill)" strokeWidth="0.28" strokeLinecap="round" opacity={glowing ? '0.24' : '0.12'}/>
   </svg>
 );
 
@@ -74,35 +111,74 @@ export function FeatherReaction({ fragmentId, locale, label, reactedLabel, initi
         body: JSON.stringify({ fragment_id: fragmentId, language: locale }),
       });
     } catch {}
-    setTimeout(() => setParticles(false), 1200);
+    setTimeout(() => setParticles(false), 2000);
   };
 
   return (
-    <div className="flex flex-col items-center gap-3">
-      <div className="relative">
+    <div className="flex flex-col items-center gap-4">
+      <div className="relative flex items-center justify-center">
+
+        {/* Particules très douces */}
         <AnimatePresence>
-          {particles && [...Array(6)].map((_, i) => (
+          {particles && [...Array(5)].map((_, i) => (
             <motion.div
               key={i}
-              initial={{ opacity: 1, x: 0, y: 0 }}
-              animate={{ opacity: 0, x: Math.cos(i * 60 * Math.PI / 180) * 28, y: Math.sin(i * 60 * Math.PI / 180) * 28 - 8 }}
-              transition={{ duration: 0.9, delay: i * 0.04, ease: 'easeOut' }}
-              className="absolute top-1/2 left-1/2 w-1.5 h-1.5 rounded-full pointer-events-none"
-              style={{ background: 'var(--gold)', marginLeft: '-3px', marginTop: '-3px' }}
+              initial={{ opacity: 0.8, x: 0, y: 0, scale: 1 }}
+              animate={{
+                opacity: 0,
+                x: Math.cos((i * 72 + 18) * Math.PI / 180) * 22,
+                y: Math.sin((i * 72 + 18) * Math.PI / 180) * 22 - 8,
+                scale: 0.2,
+              }}
+              transition={{ duration: 1.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute rounded-full pointer-events-none"
+              style={{
+                width: '4px', height: '4px',
+                background: 'rgba(212,184,106,0.7)',
+                top: '50%', left: '50%',
+                marginLeft: '-2px', marginTop: '-2px',
+              }}
             />
           ))}
         </AnimatePresence>
 
+        {/* Halo lumineux quand réagi */}
+        {reacted && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.6 }}
+            animate={{ opacity: [0, 0.25, 0], scale: [0.6, 1.8, 2.2] }}
+            transition={{ duration: 2.5, ease: 'easeOut' }}
+            className="absolute rounded-full pointer-events-none"
+            style={{
+              width: '60px', height: '80px',
+              background: 'radial-gradient(ellipse, rgba(237,217,138,0.4) 0%, transparent 70%)',
+            }}
+          />
+        )}
+
         <motion.button
           onClick={handleReact}
           disabled={reacted}
-          animate={reacted ? { y: [0, -3, 0, -2, 0], rotate: [0, -2, 2, -1, 0] } : {}}
-          transition={{ duration: 2.5, repeat: reacted ? Infinity : 0, repeatDelay: 4 }}
-          whileTap={!reacted ? { scale: 0.9 } : {}}
-          className={`transition-all duration-700 ${reacted ? 'cursor-default' : 'cursor-pointer hover:scale-110'}`}
+          // Animation flottante très lente quand réagi
+          animate={reacted ? {
+            y: [0, -6, 0, -4, 0, -5, 0],
+            rotate: [0, -1.5, 1, -1, 0.5, -0.5, 0],
+          } : {}}
+          transition={reacted ? {
+            duration: 8,
+            repeat: Infinity,
+            repeatDelay: 1,
+            ease: 'easeInOut',
+          } : {}}
+          whileTap={!reacted ? { scale: 0.92, transition: { duration: 0.3 } } : {}}
+          className={`transition-all ${reacted ? 'cursor-default' : 'cursor-pointer'}`}
           style={{
-            width: '52px', height: '68px',
-            filter: reacted ? 'drop-shadow(0 0 10px rgba(212,184,106,0.75)) drop-shadow(0 0 22px rgba(212,184,106,0.4))' : 'none',
+            width: '44px',
+            height: '72px',
+            filter: reacted
+              ? 'drop-shadow(0 0 8px rgba(237,217,138,0.6)) drop-shadow(0 0 18px rgba(212,184,106,0.25))'
+              : 'drop-shadow(0 1px 3px rgba(184,148,74,0.15))',
+            transition: 'filter 1.5s ease',
           }}
           aria-label={label}
         >
@@ -110,28 +186,44 @@ export function FeatherReaction({ fragmentId, locale, label, reactedLabel, initi
         </motion.button>
       </div>
 
+      {/* Label */}
       <AnimatePresence mode="wait">
         {!reacted ? (
-          <motion.span key="label" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            className="text-[11px] uppercase tracking-[0.14em]" style={{ color: 'rgba(42,40,32,0.45)', fontWeight: 300 }}>
+          <motion.button
+            key="label"
+            onClick={handleReact}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-[10.5px] uppercase tracking-[0.16em] cursor-pointer transition-opacity duration-500 hover:opacity-80"
+            style={{ color: 'rgba(42,40,32,0.4)', fontWeight: 300 }}
+          >
             {label}
-          </motion.span>
+          </motion.button>
         ) : (
-          <motion.span key="reacted" initial={{ opacity: 0, y: 4 }} animate={{ opacity: 0.7 }}
-            className="font-display italic text-[13px]" style={{ color: 'var(--gold)' }}>
+          <motion.span
+            key="reacted"
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 0.65 }}
+            transition={{ duration: 1.4, delay: 0.2 }}
+            className="font-display italic text-[13px]"
+            style={{ color: 'rgba(184,148,74,0.75)' }}
+          >
             {reactedLabel}
           </motion.span>
         )}
       </AnimatePresence>
 
+      {/* Compteur discret */}
       <AnimatePresence>
         {count > 0 && (
           <motion.p
             initial={{ opacity: 0, y: 4 }}
-            animate={{ opacity: 0.5 }}
-            transition={{ delay: 0.4, duration: 1 }}
-            className="text-[11px] tracking-wide text-center"
-            style={{ color: 'rgba(42,40,32,0.45)' }}
+            animate={{ opacity: 0.42 }}
+            transition={{ delay: reacted ? 0.8 : 0, duration: 1.5 }}
+            className="text-[10.5px] tracking-wide text-center"
+            style={{ color: 'rgba(42,40,32,0.42)' }}
           >
             {count} {locale === 'fr' ? 'personnes le ressentent' : 'people feel this'}
           </motion.p>

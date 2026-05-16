@@ -103,7 +103,7 @@ export function NotificationPrompt({ locale }: Props) {
           transition={{ duration: 0.8 }}
           className="fixed bottom-20 sm:bottom-6 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-[300px] z-50"
         >
-          <div className="glass-strong rounded-3xl p-6" style={{ boxShadow: '0 8px 40px rgba(0,0,0,0.1)' }}>
+          <div className="rounded-3xl p-6" style={{ background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(24px)', WebkitBackdropFilter: 'blur(24px)', border: '1px solid rgba(255,255,255,0.2)', boxShadow: '0 8px 40px rgba(0,0,0,0.1)' }}>
             {/* Feather icon */}
             <div className="w-8 h-10 mx-auto mb-4">
               <svg viewBox="0 0 40 54" fill="none" className="w-full h-full" style={{ filter: 'drop-shadow(0 0 6px rgba(184,148,74,0.5))' }}>

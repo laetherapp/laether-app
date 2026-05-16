@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Là où tout devient léger — L. Aether",
+    "description": "Un espace pour prolonger ce que le livre a ouvert en toi.",
+    "siteName": "L. Aether"
+  },
+  "nav": {
+    "fragments": "Fragments",
+    "cercles": "Cercles",
+    "communaute": "Ensemble",
+    "premium": "Accès complet",
+    "audio": "Écouter"
+  },
+  "home": {
+    "eyebrow": "L. Aether",
+    "title": "Là où tout\ndevient léger",
+    "subtitle": "Tu as refermé le livre.\nMais quelque chose reste.",
+    "cta": "Entrer",
+    "presence": "D'autres sont là aussi.",
+    "tagline": "Ralentir. Ressentir. Revenir."
+  },
+  "fragments": {
+    "eyebrow": "Fragments",
+    "subtitle": "Des mots qui ne demandent rien.\nIls sont simplement là.",
+    "reaction": "Ce mot m'a touché",
+    "reacted": "quelque chose s'est allumé",
+    "next": "Suivant",
+    "presence": "Quelqu'un d'autre a ressenti ça aussi.",
+    "lock_title": "Accès complet",
+    "lock_body": "Les fragments suivants sont réservés aux membres.\nRejoins l'espace pour y accéder.",
+    "lock_cta": "Découvrir l'accès complet",
+    "loading": "Un instant…",
+    "empty": "Rien pour l'instant.\nReviens demain."
+  },
+  "cercles": {
+    "eyebrow": "Cercles",
+    "title": "Trois personnes.\nUn espace partagé.",
+    "subtitle": "Tu rejoins un cercle de trois.\nPas plus. Pas moins.\nUn espace intime pour échanger\nsur ce que le livre a ouvert.",
+    "join_cta": "Rejoindre un cercle",
+    "my_circle": "Mon cercle",
+    "question_label": "Question de la semaine",
+    "chat_placeholder": "Écris ce que tu veux partager…",
+    "send": "Envoyer",
+    "members": "membres",
+    "waiting": "En attente de membres…",
+    "waiting_body": "Ton cercle se forme doucement.\nTu seras notifié quand il sera prêt.",
+    "no_circle": "Tu n'as pas encore de cercle.",
+    "no_circle_body": "Rejoins-en un pour commencer.",
+    "week": "Semaine"
+  },
+  "communaute": {
+    "eyebrow": "Ensemble",
+    "title": "Ce que le livre\na ouvert en nous.",
+    "subtitle": "Des mots partagés librement.\nAnonymement. Sans jugement.",
+    "placeholder": "Partage ce que le livre a provoqué en toi…",
+    "submit": "Partager",
+    "submitting": "En chemin…",
+    "success": "C'est là maintenant.\nMerci.",
+    "note": "Anonyme · Modéré avec soin",
+    "empty": "Sois le premier à partager.",
+    "reaction": "Ce mot m'a touché",
+    "load_more": "Voir plus"
+  },
+  "premium": {
+    "eyebrow": "Accès complet",
+    "title": "Va plus loin\ndans l'espace.",
+    "subtitle": "Tous les fragments.\nLes pistes audio.\nL'espace qui s'approfondit.",
+    "monthly_label": "Mensuel",
+    "monthly_price": "5,99€",
+    "monthly_period": "/ mois",
+    "annual_label": "Annuel",
+    "annual_price": "44,99€",
+    "annual_period": "/ an",
+    "annual_save": "Économise 27€",
+    "annual_highlight": "Recommandé",
+    "features": [
+      "Tous les fragments",
+      "Pistes audio détente",
+      "Accès en avant-première au nouveau contenu"
+    ],
+    "cta_monthly": "Commencer — 5,99€/mois",
+    "cta_annual": "Commencer — 44,99€/an",
+    "secure": "Paiement sécurisé · Annulation à tout moment",
+    "currency_switch": "Payer en USD"
+  },
+  "audio": {
+    "eyebrow": "Écouter",
+    "title": "Pistes audio",
+    "subtitle": "Des espaces sonores pour aller plus loin.",
+    "coming_soon": "Bientôt disponible.",
+    "coming_body": "Les pistes arrivent doucement.\nReviens dans quelques jours.",
+    "lock_body": "Cet espace est réservé aux membres.",
+    "lock_cta": "Découvrir l'accès complet",
+    "premium_badge": "Membres"
+  },
+  "auth": {
+    "signin_title": "Rejoindre l'espace",
+    "signin_body": "Entre ton email pour accéder à l'espace.",
+    "email_placeholder": "ton email",
+    "submit": "Continuer",
+    "check_email": "Vérifie ta boîte mail.\nUn lien t'a été envoyé.",
+    "or": "ou"
+  },
+  "common": {
+    "back": "Retour",
+    "loading": "Un instant…",
+    "error": "Quelque chose s'est passé.",
+    "retry": "Réessayer",
+    "free": "Gratuit",
+    "members_only": "Membres"
+  }
+}

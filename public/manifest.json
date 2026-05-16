@@ -1,0 +1,22 @@
+{
+  "name": "Là où tout devient léger",
+  "short_name": "L. Aether",
+  "description": "Un espace pour prolonger ce que le livre a ouvert.",
+  "start_url": "/fr",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FAF8F2",
+  "theme_color": "#FAF8F2",
+  "lang": "fr",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" },
+    { "src": "/icons/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ],
+  "shortcuts": [
+    { "name": "Fragments", "url": "/fr/fragments" },
+    { "name": "Cercles", "url": "/fr/cercles" },
+    { "name": "Ensemble", "url": "/fr/communaute" }
+  ]
+}

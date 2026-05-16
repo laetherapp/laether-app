@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L. Aether</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    body{
+      min-height:100vh;display:flex;flex-direction:column;
+      align-items:center;justify-content:center;text-align:center;
+      padding:2rem;font-family:Georgia,serif;
+      background-image:url('/fond.png');background-size:cover;background-position:center;
+    }
+    .overlay{position:fixed;inset:0;background:rgba(250,248,242,0.7)}
+    .content{position:relative;z-index:1}
+    svg{width:48px;height:56px;margin:0 auto 2rem;display:block;animation:b 5s ease-in-out infinite}
+    @keyframes b{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:.9;transform:scale(1.04)}}
+    h1{font-style:italic;font-size:1.4rem;font-weight:400;color:#2A2820;margin-bottom:1rem}
+    p{font-size:.875rem;color:rgba(42,40,32,.65);line-height:1.9}
+    .d{width:40px;height:1px;background:#B8944A;opacity:.5;margin:1.5rem auto}
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="content">
+    <svg viewBox="0 0 52 62" fill="none">
+      <path d="M26 3C38 16 46 30 26 59C6 30 14 16 26 3Z" stroke="#B8944A" stroke-width=".8" fill="rgba(184,148,74,.08)"/>
+      <line x1="26" y1="3" x2="26" y2="59" stroke="#B8944A" stroke-width=".6" opacity=".5"/>
+    </svg>
+    <h1>Tu es dans le silence.</h1>
+    <div class="d"></div>
+    <p>Pas de connexion pour l'instant.<br>Mais tu es toujours là.</p>
+  </div>
+</body>
+</html>

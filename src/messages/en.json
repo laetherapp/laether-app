@@ -1,0 +1,112 @@
+{
+  "meta": {
+    "title": "Where Everything Becomes Light — L. Aether",
+    "description": "A space to continue what the book opened in you.",
+    "siteName": "L. Aether"
+  },
+  "nav": {
+    "fragments": "Fragments",
+    "cercles": "Circles",
+    "communaute": "Together",
+    "premium": "Full access",
+    "audio": "Listen"
+  },
+  "home": {
+    "eyebrow": "L. Aether",
+    "title": "Where everything\nbecomes light",
+    "subtitle": "You closed the book.\nBut something stays.",
+    "cta": "Enter",
+    "presence": "Others are here too.",
+    "tagline": "Slow down. Feel. Return."
+  },
+  "fragments": {
+    "eyebrow": "Fragments",
+    "subtitle": "Words that ask for nothing.\nThey are simply here.",
+    "reaction": "This touched me",
+    "reacted": "something lit up",
+    "next": "Next",
+    "presence": "Someone else felt this too.",
+    "lock_title": "Full access",
+    "lock_body": "The following fragments are for members.\nJoin the space to read them.",
+    "lock_cta": "Discover full access",
+    "loading": "One moment…",
+    "empty": "Nothing just yet.\nCome back tomorrow."
+  },
+  "cercles": {
+    "eyebrow": "Circles",
+    "title": "Three people.\nOne shared space.",
+    "subtitle": "You join a circle of three.\nNo more. No less.\nAn intimate space to share\nwhat the book opened in you.",
+    "join_cta": "Join a circle",
+    "my_circle": "My circle",
+    "question_label": "This week's question",
+    "chat_placeholder": "Write what you want to share…",
+    "send": "Send",
+    "members": "members",
+    "waiting": "Waiting for members…",
+    "waiting_body": "Your circle is forming gently.\nYou'll be notified when it's ready.",
+    "no_circle": "You don't have a circle yet.",
+    "no_circle_body": "Join one to begin.",
+    "week": "Week"
+  },
+  "communaute": {
+    "eyebrow": "Together",
+    "title": "What the book\nopened in us.",
+    "subtitle": "Words shared freely.\nAnonymously. Without judgment.",
+    "placeholder": "Share what the book stirred in you…",
+    "submit": "Share",
+    "submitting": "On its way…",
+    "success": "It's here now.\nThank you.",
+    "note": "Anonymous · Gently moderated",
+    "empty": "Be the first to share.",
+    "reaction": "This touched me",
+    "load_more": "See more"
+  },
+  "premium": {
+    "eyebrow": "Full access",
+    "title": "Go further\ninto the space.",
+    "subtitle": "All fragments.\nAudio tracks.\nA space that deepens.",
+    "monthly_label": "Monthly",
+    "monthly_price": "$6.99",
+    "monthly_period": "/ month",
+    "annual_label": "Annual",
+    "annual_price": "$49.99",
+    "annual_period": "/ year",
+    "annual_save": "Save $34",
+    "annual_highlight": "Recommended",
+    "features": [
+      "All fragments",
+      "Relaxation audio tracks",
+      "Early access to new content"
+    ],
+    "cta_monthly": "Begin — $6.99/month",
+    "cta_annual": "Begin — $49.99/year",
+    "secure": "Secure payment · Cancel anytime",
+    "currency_switch": "Pay in EUR"
+  },
+  "audio": {
+    "eyebrow": "Listen",
+    "title": "Audio tracks",
+    "subtitle": "Sound spaces to go further.",
+    "coming_soon": "Coming soon.",
+    "coming_body": "The tracks are arriving gently.\nCome back in a few days.",
+    "lock_body": "This space is for members.",
+    "lock_cta": "Discover full access",
+    "premium_badge": "Members"
+  },
+  "auth": {
+    "signin_title": "Join the space",
+    "signin_body": "Enter your email to access the space.",
+    "email_placeholder": "your email",
+    "submit": "Continue",
+    "check_email": "Check your inbox.\nA link has been sent.",
+    "or": "or"
+  },
+  "common": {
+    "back": "Back",
+    "loading": "One moment…",
+    "error": "Something happened.",
+    "retry": "Try again",
+    "free": "Free",
+    "members_only": "Members"
+  }
+}

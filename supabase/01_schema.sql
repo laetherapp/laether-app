@@ -43,8 +43,7 @@ CREATE TABLE IF NOT EXISTS reactions (
 CREATE INDEX IF NOT EXISTS idx_react_frag ON reactions (fragment_id);
 CREATE INDEX IF NOT EXISTS idx_react_post ON reactions (post_id);
 
--- Trigger reaction count on fragments
-CREATE OR REPLACE FUNCTION fn_increment_fragment_reaction()
+CREATE OR REPLACE FUNCTION fn_increment_reaction()
 RETURNS TRIGGER AS $$
 BEGIN
   IF NEW.fragment_id IS NOT NULL THEN
@@ -60,49 +59,23 @@ $$ LANGUAGE plpgsql;
 DROP TRIGGER IF EXISTS trg_reaction_count ON reactions;
 CREATE TRIGGER trg_reaction_count
 AFTER INSERT ON reactions
-FOR EACH ROW EXECUTE FUNCTION fn_increment_fragment_reaction();
+FOR EACH ROW EXECUTE FUNCTION fn_increment_reaction();
 
 -- ─── circles ─────────────────────────────
 CREATE TABLE IF NOT EXISTS circles (
   id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  language    VARCHAR(5)  NOT NULL,
+  language    VARCHAR(5)  NOT NULL DEFAULT 'mixed',
   status      VARCHAR(20) NOT NULL DEFAULT 'forming' CHECK (status IN ('forming','active','closed')),
   created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
--- ─── circle_members ──────────────────────
-CREATE TABLE IF NOT EXISTS circle_members (
-  id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  circle_id   UUID        NOT NULL REFERENCES circles(id) ON DELETE CASCADE,
-  user_id     UUID        NOT NULL,
-  joined_at   TIMESTAMPTZ NOT NULL DEFAULT now(),
-  UNIQUE(circle_id, user_id)
-);
-CREATE INDEX IF NOT EXISTS idx_members_circle ON circle_members (circle_id);
-CREATE INDEX IF NOT EXISTS idx_members_user ON circle_members (user_id);
-
--- ─── circle_messages ─────────────────────
-CREATE TABLE IF NOT EXISTS circle_messages (
-  id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  circle_id   UUID        NOT NULL REFERENCES circles(id) ON DELETE CASCADE,
-  user_id     UUID        NOT NULL,
-  content     TEXT        NOT NULL CHECK (char_length(content) BETWEEN 1 AND 600),
-  created_at  TIMESTAMPTZ NOT NULL DEFAULT now()
-);
-CREATE INDEX IF NOT EXISTS idx_msgs_circle ON circle_messages (circle_id, created_at DESC);
-
 -- ─── subscriptions ───────────────────────
 CREATE TABLE IF NOT EXISTS subscriptions (
-  id              UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
-  user_id         UUID,
-  email           VARCHAR(255) NOT NULL,
-  stripe_id       VARCHAR(255),
-  plan            VARCHAR(50),
-  currency        VARCHAR(3)  DEFAULT 'eur',
-  status          VARCHAR(20) NOT NULL DEFAULT 'active',
-  language        VARCHAR(5)  DEFAULT 'fr',
-  source          VARCHAR(100),
-  created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
+  id          UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  email       VARCHAR(255) NOT NULL,
+  language    VARCHAR(5)   NOT NULL DEFAULT 'fr',
+  source      VARCHAR(100),
+  created_at  TIMESTAMPTZ  NOT NULL DEFAULT now(),
   UNIQUE(email)
 );
 
